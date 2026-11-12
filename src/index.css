@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100;
+    @apply font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-accent/20;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-white dark:ring-offset-neutral-950;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full px-5 sm:px-8;
+    max-width: 760px;
+  }
+  .link-underline {
+    @apply underline decoration-neutral-300 decoration-1 underline-offset-4 transition-colors hover:decoration-accent dark:decoration-neutral-700;
+  }
+}
